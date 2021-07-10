@@ -1,10 +1,14 @@
+
+const FETCH_ALL = "FETCH_ALL";
+const CREATE = "CREATE";
+
 export default (posts = [], action) => {
     switch (action.type) {
-        case "FETCH_DATA":
-            return action.payload
-        case "CREATE":
-            return posts
+        case FETCH_ALL:
+            return action.payload;
+        case CREATE:
+            return [...posts, action.payload];
         default:
-            return posts
+            return posts;
     }
 }
